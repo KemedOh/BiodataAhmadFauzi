@@ -1,0 +1,249 @@
+/* Custom Styles for Biodata Portfolio */
+
+/* Matrix Background Effect */
+.matrix-char {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #10b981;
+    opacity: 0.3;
+    animation: matrix-fall linear infinite;
+}
+
+@keyframes matrix-fall {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Perspective for 3D effects */
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+/* Enhanced Glow Effects */
+.glow-green {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+}
+
+.glow-lime {
+    box-shadow: 0 0 20px rgba(132, 204, 22, 0.5);
+}
+
+/* Particle Canvas Styling */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #10b981;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #059669;
+}
+
+/* Enhanced 3D Card Effects */
+.skill-category {
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.skill-category:hover {
+    transform: rotateY(10deg) rotateX(5deg) translateZ(20px);
+}
+
+.project-card {
+    transform-style: preserve-3d;
+    transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.project-card:hover {
+    transform: rotateY(15deg) rotateX(10deg) translateZ(30px) scale(1.05);
+}
+
+/* Terminal-style text effects */
+.terminal-text {
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+/* Floating Animation Variations */
+@keyframes float-slow {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotateX(0deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotateX(5deg);
+    }
+}
+
+@keyframes float-medium {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotateY(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotateY(10deg);
+    }
+}
+
+@keyframes float-fast {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotateZ(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotateZ(5deg);
+    }
+}
+
+/* Progress Bar Animations */
+.skill-item .bg-gradient-to-r {
+    animation: skill-load 2s ease-out;
+}
+
+@keyframes skill-load {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: var(--skill-width, 50%);
+    }
+}
+
+/* Enhanced Backdrop Effects */
+.backdrop-blur-custom {
+    backdrop-filter: blur(10px) saturate(200%) contrast(120%);
+}
+
+/* Interactive Elements */
+.interactive-element {
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    cursor: pointer;
+}
+
+.interactive-element:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+}
+
+/* Text Glow Effect */
+.text-glow {
+    text-shadow:
+        0 0 5px rgba(16, 185, 129, 0.5),
+        0 0 10px rgba(16, 185, 129, 0.3),
+        0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+/* Button Hover Effects */
+button:hover {
+    box-shadow:
+        0 0 20px rgba(16, 185, 129, 0.4),
+        inset 0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+/* Form Input Focus Effects */
+input:focus,
+textarea:focus {
+    box-shadow:
+        0 0 0 2px rgba(16, 185, 129, 0.3),
+        inset 0 0 10px rgba(16, 185, 129, 0.1);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+
+    .skill-category:hover,
+    .project-card:hover {
+        transform: scale(1.02) translateY(-5px);
+    }
+
+    .matrix-char {
+        font-size: 12px;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Loading States */
+.loading {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.loading.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhanced Matrix Effect */
+#matrix-bg {
+    background:
+        radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.3) 70%),
+        linear-gradient(45deg, transparent 30%, rgba(16, 185, 129, 0.03) 50%, transparent 70%);
+    overflow: hidden;
+}
+
+/* Improved Responsive Design */
+@media (max-width: 640px) {
+    .text-4xl {
+        font-size: 2rem;
+    }
+
+    .text-6xl {
+        font-size: 3rem;
+    }
+
+    .min-h-screen {
+        min-height: 100vh;
+    }
+}
+
+/* Enhanced Accessibility */
+.focus-visible:focus {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
+}
